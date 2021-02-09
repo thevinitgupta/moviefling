@@ -31,6 +31,7 @@
     color : #00b8a9;
 }
 .main__head__movie.active {
+    background-color: #fff;
     border: none;
     border-bottom: 2px solid #00b8a9;
 }
@@ -39,19 +40,22 @@
     color: #fff;
     cursor: pointer;
 }
-.main__head__shows {
+.main__head__tv {
     color : #ea5455;
 }
-.main__head__shows.active {
+.main__head__tv.active {
+    background-color: #fff;
     border: none;
     border-bottom: 2px solid #ea5455;
 }
-.main__head__shows:hover {
+.main__head__tv:hover {
     background-color: #ea5455;
     color: #fff;
     cursor: pointer;
 }
 .main__body {
     flex: 0.9;
+    margin: 0 auto;
     margin-top: 15px;
+    width: 80%;
 }
