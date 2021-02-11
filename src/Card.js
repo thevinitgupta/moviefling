@@ -11,8 +11,9 @@ function Card({value}) {
         </div>
         <div className="card__info">
         <h2>{title}</h2>
+        {value.release_date? <div className="card__info__date"><strong>Release Date :</strong> <span>{value.release_date}</span></div> : <div className="card__info__date"><strong>First Aired On :</strong><span> {value.first_air_date}</span></div> }
         <div className="card__info__rating">
-        <div className="rating__text">Rating :</div>
+        <div className="rating__text"><strong>Rating :</strong></div>
         <RatingBar voteAverage={value.vote_average} />
         </div>
         <div className="card__info__overview">

@@ -20,11 +20,12 @@
 -moz-box-shadow: 13px 14px 48px -6px    #2d40592f;
 }
 .card__image {
-    flex: 0.2;
+    flex: 0.3;
     border: none;
     border-radius: 10px 0 0 10px;
     height: 100%;
     overflow: hidden;
+    object-fit: contain;
 }
 .card__image > img {
     height: 100%;
@@ -32,7 +33,7 @@
 }
 
 .card__info {
-    flex: 0.8;
+    flex: 0.7;
     padding: 10px 15px 10px 20px;
     display: flex;
     flex-direction: column;
@@ -40,6 +41,9 @@
 }
 .card__info>h2 {
     padding: 0;
+}
+.card__info__date{
+    margin-bottom: 5px;
 }
 .card__info__rating {
     height: 100%;
