@@ -4,6 +4,9 @@ html {
   overflow-x: hidden;
   font-family: 'Do Hyeon', sans-serif;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 .app {
   padding: 0;
   background-color: #f2f2f2;
@@ -17,17 +20,32 @@ html {
   height: 15vh;
   width: 100%;
   margin: 0 auto;
+  position: relative;
   padding-top: 10px;
   background-color: #2d4059;
   display: flex;
   align-items :flex-start;
   justify-content: center;
-
+  color: #62d2a2;
 }
-.app__head>span {
+.app__name {
   font-size: 2.5rem;
   font-weight: 600;
   margin: 0 50px;
-  color: #62d2a2;
 }
-
+.acknowledgement{
+  width: 8vh;
+  height:8vh;
+  object-fit: contain;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #3e8164;
+}
+@media screen and (max-width: 550px){
+  .acknowledgement {
+    width: 8vw;
+    height:8vw;
+    top: 20px;
+  }
+}

@@ -37,3 +37,18 @@
 .search__btn__tv:hover {
     box-shadow: 1px 1px 10px 1px #b13f3f73;
 }
+
+@media screen and (max-width: 550px){
+    .search {
+        width: 70vw;
+        margin: 0 auto;
+    }
+    .search__input {
+        font-size: 20px;
+        min-height: 30px;
+    }
+    .search__btn{
+        font-size: 18px;
+        min-height: 35px;
+    }
+}

@@ -56,3 +56,14 @@
     flex: 0.2;
     height: 100%;
 }
+
+@media screen and (max-width: 550px){
+    .card {
+        flex-direction: column;
+    }
+    .card__image{
+        max-height: 300px;
+        max-width: 250px;
+        border-radius: 0;
+    }
+}
