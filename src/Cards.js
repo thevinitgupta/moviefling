@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 import Card from "./Card";
 
-function Cards({cardList}) {
+function Cards({cardList,sub}) {
     return (
-        <div>
+        
+            <div>
            {cardList && cardList.map((value,index)=>{
-                    return <Card key={index+1} value={value} />
+                    return <Card key={index+1} value={value} sub={sub} />
                     })     
                 } 
         </div>

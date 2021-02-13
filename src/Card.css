@@ -14,10 +14,9 @@
     transition: 0.3s;
 }
 .card:hover{
-    cursor: pointer;
-    box-shadow: 13px 14px 48px -6px     #2d40592f;
--webkit-box-shadow: 13px 14px 48px -6px #2d40592f;
--moz-box-shadow: 13px 14px 48px -6px    #2d40592f;
+    box-shadow: 13px 16px 48px -6px     #2d40592f;
+-webkit-box-shadow: 13px 16px 48px -6px #2d40592f;
+-moz-box-shadow: 13px 16px 48px -6px    #2d40592f;
 }
 .card__image {
     flex: 0.3;
@@ -56,7 +55,26 @@
     flex: 0.2;
     height: 100%;
 }
-
+.card__readMore {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.card__readMore__link{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ff5622;
+}
+.card__readMore__link>a {
+    text-decoration: none;
+    color: #ff5622;
+}
+.card__readMore__link__icon {
+    transform: rotateZ(-90deg);
+}
 @media screen and (max-width: 550px){
     .card {
         flex-direction: column;
@@ -65,5 +83,11 @@
         max-height: 300px;
         max-width: 250px;
         border-radius: 0;
+    }
+    .card__readMore {
+        margin-bottom: 10px;
+    }
+    .card__readMore__link {
+        width: 40%;
     }
 }

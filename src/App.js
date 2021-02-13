@@ -1,8 +1,10 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Main from './Main';
 
 function App() {
   return (
+    <Router>
     <div className="app">
       <div className="app__head">
         <span className="app__name">movie fling</span>
@@ -11,6 +13,7 @@ function App() {
       </div>
       <Main />
     </div>
+    </Router>
   );
 }
 
