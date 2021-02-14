@@ -1,4 +1,5 @@
-import React , {useState,useEffect} from 'react'
+import React , {useState,useEffect} from 'react';
+import "./Detail.css"
 
 function Detail({match}) {
     useEffect(()=>{
@@ -15,11 +16,17 @@ function Detail({match}) {
         setDetails(jsonData)
     };
     return (
-        <div className="details">
-            <div className="details__head">
+        <div className="details" style={details?.poster_path && {background : `url("https://image.tmdb.org/t/p/original/${details?.poster_path}")`, backgroundRepeat : "no-repeat",backgroundSize:"cover" }}>
+            <div className="details__head" >
                 <h2>{details.title ? details.title : details.name}</h2>
             </div>
-            
+            <div className="details__info">
+                <h4>Genre :  {details?.genres?.map(value => value.name).join(", ")}</h4>
+                <p><strong>Cast : </strong></p>
+                {details?.credit?.cast?.map((value,index) => {
+                   return (<p>{index+1}. {value?.name} -  {value?.character}</p>)
+                })}
+            </div>
         </div>
     )
 }
