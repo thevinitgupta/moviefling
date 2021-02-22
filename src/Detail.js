@@ -4,7 +4,9 @@ import "./Detail.css"
 
 function Detail({match}) {
     useEffect(()=>{
-        fetchDetails();
+        fetchDetails().catch(error=> {
+            console.log("Error:",error);
+        });
         console.log(match)
     },[])
     const {id,type} = match.params;
