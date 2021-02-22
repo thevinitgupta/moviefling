@@ -1,4 +1,5 @@
 import React , {useState,useEffect} from 'react';
+import Cast from './Cast';
 import "./Detail.css"
 
 function Detail({match}) {
@@ -22,10 +23,12 @@ function Detail({match}) {
             </div>
             <div className="details__info">
                 <h4>Genre :  {details?.genres?.map(value => value.name).join(", ")}</h4>
+                <div className="details__cast">
                 <p><strong>Cast : </strong></p>
-                {details?.credit?.cast?.map((value,index) => {
-                   return (<p>{index+1}. {value?.name} -  {value?.character}</p>)
-                })}
+                <Cast castDetails={details?.credits?.cast}/>
+                </div>
+                
+                
             </div>
         </div>
     )

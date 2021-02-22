@@ -1,0 +1,9 @@
+.cast {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
