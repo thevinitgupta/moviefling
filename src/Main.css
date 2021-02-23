@@ -65,6 +65,14 @@
     margin-top: 15px;
     width: 80%;
 }
+.full {
+   position:static;
+   width: 100vw;
+   min-height: 130vh;
+   margin: 0;
+   border-radius: 0;
+   background-color: #2d4059;
+}
 
 @media screen and (max-width: 950px) {
     .main{

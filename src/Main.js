@@ -460,9 +460,11 @@ function Main() {
     //      })
     // },[cardList])
     return (
-        <div className="main">
+        
             <Switch>
+            
             <Route exact path="/">
+            <div className="main">
             <div className="main__head">
                 <div className="main__head__movie active" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,5))}}>Movies</div>
                 <div className="main__head__tv" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,2))}}>Shows</div>
@@ -471,10 +473,12 @@ function Main() {
                 <Search searchFor={searchFor} handleSearch={handleSearch} handleChange={handleChange}/>
                 <Cards cardList={cardList} sub={searchFor}/>
             </div>
+            </div>
             </Route>
+            <div className="main full">
             <Route path={`/:type/:id`} component={Detail}></Route>
+            </div>
             </Switch>
-        </div>
     )
 }
 

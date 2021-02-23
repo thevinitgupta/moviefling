@@ -1,17 +1,18 @@
 import React from 'react';
 import Profile from './Profile';
-import "./Cast.css";
+import "./Profiles.css"
 
-function Cast({castDetails}) {
+function Profiles({profilesDetails}) {
+
     return (
         
         <div className="cast">
-        
-        {castDetails?.map((cast,index)=>{
+        {profilesDetails?.map((cast,index)=>{
             return (<Profile key={index} profileDetails={cast} number={index}/>)
         })}
         </div>
+        
     )
 }
 
-export default Cast
+export default Profiles;
