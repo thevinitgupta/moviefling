@@ -1,6 +1,6 @@
 .details {
     width: 100%;
-    min-height: 130vh;
+    min-height: 150vh;
     margin: 0;
     color: #fff;
 }
@@ -8,18 +8,22 @@
     height: 8%;
     margin: 15px 50px;
     padding: 10px 20px;
-    background: rgba( 76, 76, 76, 0.05 );
+    background: rgba(51, 51, 51, 0.11);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 10.0px );
     -webkit-backdrop-filter: blur( 10.0px );
     border-radius: 10px;
     border: transparent;
     text-align: center;
+    text-shadow: 0 8px 32px 0 rgba(6, 7, 17, 0.822);
     
 }
-.details__head > h2 {
+.details__head > h1 {
     width: 100%;
     margin: 0 auto;
+}
+.details__head > h4 {
+    color: #bbb8b8;
 }
 .details__info {
     font-size: 1.2rem;

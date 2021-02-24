@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Search.css"
 function Search({searchFor,handleSearch,handleChange}) {
-    let searchBtnClass = `search__btn search__btn__${searchFor}`;
+    const [searchBtn] = useState(searchFor);
+    let searchBtnClass = `search__btn search__btn__${searchBtn}`;
     
     return (
         <div className="search">

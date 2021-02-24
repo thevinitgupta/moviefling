@@ -1,8 +1,9 @@
 .profile {
-    width: 50%;
-    height: 50vh;
-    
-    min-width: 200px;
+    height: 45vh;
+    max-height: 280px;
+    min-width: 160px;
+    max-width: 250px;
+    margin: 5px 50px;
     background: rgba( 76, 76, 76, 0.05 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 10.0px );
@@ -15,6 +16,7 @@
     position: relative;
     border-radius: 10px;
     background-size: contain !important;
+    background-repeat: no-repeat !important;
 }
 .profile__name {
     position: absolute;
