@@ -1,11 +1,12 @@
 .cast {
-    display: flex;
-    align-items: center;
-    overflow: auto;
-    overflow-x: scroll;
-    white-space: nowrap;
-    position: relative;
-    scroll-behavior: smooth;
-    height: 50vh;
+    height: 60vh;
     background-color: transparent;
+}
+
+@media screen and (max-width: 720px){
+    .cast::before {
+        color: #fff;
+        font-size: 14px;
+        content :"Touch a card for more";
+    }
 }

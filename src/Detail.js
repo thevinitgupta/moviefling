@@ -1,6 +1,7 @@
 import React , {useState,useEffect} from 'react';
 import Profiles from './Profiles';
-import "./Detail.css"
+import "./Detail.css";
+
 
 function Detail({match}) {
     useEffect(()=>{
@@ -19,6 +20,7 @@ function Detail({match}) {
         setDetails(jsonData)
     };
     const backgroundUrl = details?.backdrop_path || details?.poster_path;
+
     return (
         <div className="details" style={backgroundUrl && {background : `url("https://image.tmdb.org/t/p/original/${backgroundUrl}")`, backgroundRepeat : "no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed" }}>
             <div className="details__head" >

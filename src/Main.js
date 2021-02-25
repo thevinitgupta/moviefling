@@ -68,8 +68,9 @@ function Main() {
             </div>
             </Route>
             <div className="main full">
-            <Route path={`/:type/:id`} component={Detail}></Route>
-            </div>
+            <Route path={`/:type/:id`} component={Detail}></Route>           
+             </div>
+             
             </Switch>
     )
 }
