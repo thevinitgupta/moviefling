@@ -1,6 +1,7 @@
 import React , {useState,useEffect} from 'react';
 import Profiles from './Profiles';
 import "./Detail.css";
+import Watch from './Watch';
 
 
 function Detail({match}) {
@@ -51,6 +52,7 @@ function Detail({match}) {
                 <Profiles profilesDetails={details?.similar?.results}/>
                 </div>
             </div>
+            <Watch id={id} type={type}/>
         </div>
     )
 }

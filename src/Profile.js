@@ -3,8 +3,8 @@ import "./Profile.css"
 
 function Profile({profileDetails}) {
   const [displayDetails,setDisplayDetails] = useState(false);
-  const backgroundUrl = profileDetails?.profile_path || profileDetails?.poster_path;
-  const title = profileDetails?.name || profileDetails?.title;
+  const backgroundUrl = profileDetails?.profile_path || profileDetails?.poster_path||profileDetails?.logo_path;
+  const title = profileDetails?.name || profileDetails?.title ||profileDetails?.provider_name;
   const airedOn = profileDetails?.air_date || profileDetails?.first_air_date;
   const gender = {"0": "Other","1": "Female","2":"Male"}
     return (

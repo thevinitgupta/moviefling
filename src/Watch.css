@@ -1,0 +1,11 @@
+.searchWatchWhere {
+    height: 25px;
+    width: fit-content;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #2d4059;
+    color: #fff;
+    font-size: 16px;
+}

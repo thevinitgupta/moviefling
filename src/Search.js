@@ -6,7 +6,7 @@ function Search({searchFor,handleSearch,handleChange}) {
     
     return (
         <div className="search">
-               <input id="keyword" className="search__input" placeholder="Enter movie name or keyword" onChange={handleChange}/>
+               <input id="keyword" className="search__input" placeholder="Enter movie name or keyword" onChange={handleChange} autoComplete="false"/>
                <button className={searchBtnClass} id="search_submit" onClick={handleSearch}>Search</button>
         </div>
     )
