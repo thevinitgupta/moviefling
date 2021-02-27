@@ -46,11 +46,6 @@ function Main() {
                 
     }
 
-    // useEffect(()=>{
-    //     cardList.map((value)=>{
-    //         return console.log(value.original_title)
-    //      })
-    // },[cardList])
     return (
         
             <Switch>

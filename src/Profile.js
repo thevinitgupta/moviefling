@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+
 import "./Profile.css"
 
-function Profile({profileDetails}) {
+function Profile({profileDetails,type}) {
   const [displayDetails,setDisplayDetails] = useState(false);
-  const backgroundUrl = profileDetails?.profile_path || profileDetails?.poster_path||profileDetails?.logo_path;
-  const title = profileDetails?.name || profileDetails?.title ||profileDetails?.provider_name;
+  const backgroundUrl = profileDetails?.profile_path || profileDetails?.poster_path;
+  const title = profileDetails?.name || profileDetails?.title;
   const airedOn = profileDetails?.air_date || profileDetails?.first_air_date;
+  const id = profileDetails?.id;
   const gender = {"0": "Other","1": "Female","2":"Male"}
+
+  //person details : https://api.themoviedb.org/3/person/id?api_key=key&language=en-US
+  //diff -> if cast_id => person else movie or show
     return (
         <div className="profile" style={backgroundUrl && {backgroundImage : `url("https://image.tmdb.org/t/p/original/${backgroundUrl}")` }} onTouchStart={()=>{setDisplayDetails(true)}} onTouchEnd={()=>{setDisplayDetails(false)}} onMouseEnter={()=>{setDisplayDetails(true)}} onMouseLeave={()=>{setDisplayDetails(false)}}>
                     {

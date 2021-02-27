@@ -1,11 +1,18 @@
 .searchWatchWhere {
-    height: 25px;
+    height: 40px;
     width: fit-content;
-    padding: 8px;
+    padding: 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     outline: none;
+    background-color: #00b8a9;
+    color: #001229;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 5px 20px 60px 40px;
+}
+.searchWatchWhere:hover {
+    cursor: pointer;
     background-color: #2d4059;
-    color: #fff;
-    font-size: 16px;
+    color: #00b8a9;
 }

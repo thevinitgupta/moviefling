@@ -4,9 +4,10 @@ import "./Profiles.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Switch } from 'react-router-dom';
 
 
-function Profiles({profilesDetails}) {
+function Profiles({profilesDetails,type}) {
     const settings = {
         dots: false,
         lazyLoad: true,
@@ -50,7 +51,11 @@ function Profiles({profilesDetails}) {
         <div className="cast">
         <Slider {...settings}>
         {profilesDetails?.map((profileData,index)=>{
-            return (<div key={index}><Profile  profileDetails={profileData} number={index}/></div>)
+            return (
+              <Switch>
+              <div key={index}><Profile  profileDetails={profileData} type={type} /></div>
+              </Switch>
+              )
         })}
         </Slider>
         </div>
