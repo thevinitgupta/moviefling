@@ -57,7 +57,11 @@ function Detail({match}) {
                 <Profiles profilesDetails={details?.similar?.results} type={type}/>
                 </div>
             </div>
-            <Watch id={id} type={type}/>
+            <div>
+                
+                <Watch id={id} type={type}/>
+            </div>
+            
         </div>
     )
 }

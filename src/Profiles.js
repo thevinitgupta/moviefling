@@ -52,8 +52,8 @@ function Profiles({profilesDetails,type}) {
         <Slider {...settings}>
         {profilesDetails?.map((profileData,index)=>{
             return (
-              <Switch>
-              <div key={index}><Profile  profileDetails={profileData} type={type} /></div>
+              <Switch key={index}>
+              <div ><Profile  profileDetails={profileData} type={type} /></div>
               </Switch>
               )
         })}
