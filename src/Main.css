@@ -73,7 +73,14 @@
    border-radius: 0;
    background-color: #2d4059;
 }
-
+.sorting {
+    display: flex;
+    width: 95%;
+    justify-content: flex-start;
+}
+.sorting__head {
+    font-weight: 600;
+}
 @media screen and (max-width: 950px) {
     .main{
         width: 100vw;

@@ -1,0 +1,33 @@
+.options {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px auto;
+}
+.options__head {
+    width: fit-content;
+    font-size: 18px;
+    font-weight: 600;
+}
+.sort__btn {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px 7px;
+}
+.sort__btn__inc{
+    background-color: #00b8a9;
+}
+.sort__btn__dec {
+    background-color: #ea5455;
+}
+@media screen and (max-width : 450px){
+    .options__head {
+        font-size: 14px;
+    }
+}

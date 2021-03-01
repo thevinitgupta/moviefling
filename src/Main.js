@@ -3,7 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import Cards from './Cards';
 import Detail from './Detail';
 import "./Main.css";
+import Options from './Options';
 import Search from './Search';
+import Sort from "./Sort";
 
 function Main() {
     const [searchFor,setSearchFor] = useState("movie");
@@ -35,7 +37,6 @@ function Main() {
             fetch(`https://api.themoviedb.org/3/search/${searchFor}?api_key=${apiKey}&language=en-US&query=${finalSearchKeyword}&page=1&include_adult=false`).then(res => res.json()).then(resp=>{
                 console.log(resp)
                 setCardList(resp.results);
-                console.log(cardList)
             }).catch(error => {
                 console.log(error);
             })
@@ -46,6 +47,39 @@ function Main() {
                 
     }
 
+    function addDates(){
+        if(cardList &&(!cardList[0].date)){
+            for(let i=0;i<cardList.length;i++){
+                let dateVal;
+                if(cardList[i].release_date){
+                    dateVal = cardList[i].release_date.split("-").join(",");
+                }
+                else if(cardList[i].first_air_date){
+                    dateVal = cardList[i].first_air_date.split("-").join(",");
+                }
+                cardList[i].date = new Date(dateVal);
+            }
+        }
+        else {
+            return;
+        }
+    }
+
+    function sortRating(order){
+       setCardList(Sort.mergeSort(cardList,"vote_average",order));
+    }
+
+    function sortDate(order){
+        addDates();
+        setCardList(Sort.mergeSort(cardList,"date",order));
+    }
+
+    function sortAlphabetically(order){
+        if(cardList[0].title)
+        setCardList(Sort.mergeSort(cardList,"title",order))
+        else
+        setCardList(Sort.mergeSort(cardList,"name",order))
+    }
     return (
         
             <Switch>
@@ -58,6 +92,11 @@ function Main() {
             </div>
             <div className="main__body">
                 <Search searchFor={searchFor} handleSearch={handleSearch} handleChange={handleChange}/>
+                <div  className="sorting">
+                <span className="main__head__tv sorting__head">Sort by</span>
+                <Options sortRating={sortRating} sortDate={sortDate} sortAlphabetically={sortAlphabetically}/>
+                </div>
+                
                 <Cards cardList={cardList} sub={searchFor}/>
             </div>
             </div>
