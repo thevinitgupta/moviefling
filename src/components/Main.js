@@ -11,6 +11,8 @@ function Main() {
     const [searchFor,setSearchFor] = useState("movie");
     const [searchKeyword,setSearchKeyword] = useState("")
     const [cardList,setCardList] = useState([]);
+    //const [currentPage,setCurrentPage] = useState(0);
+    const [nextPage,setNextPage] = useState(1)
     const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
     
@@ -31,12 +33,15 @@ function Main() {
     function handleChange(event){
         setSearchKeyword(event.target.value)
 }
-    function handleSearch(){
+    function handleSearch(page){
         if(searchKeyword){
             const finalSearchKeyword = searchKeyword.split(/[ -,]/).join("+");
-            fetch(`https://api.themoviedb.org/3/search/${searchFor}?api_key=${apiKey}&language=en-US&query=${finalSearchKeyword}&page=1&include_adult=false`).then(res => res.json()).then(resp=>{
+            fetch(`https://api.themoviedb.org/3/search/${searchFor}?api_key=${apiKey}&language=en-US&query=${finalSearchKeyword}&page=${page}&include_adult=false`).then(res => res.json()).then(resp=>{
                 console.log(resp)
                 setCardList(resp.results);
+                if(page>=resp.total_pages) page=0;
+                setNextPage(page+1)
+
             }).catch(error => {
                 console.log(error);
             })
@@ -91,13 +96,27 @@ function Main() {
                 <div className="main__head__tv" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,2)); setSearchFor("tv")}}>Shows</div>
             </div>
             <div className="main__body">
-                <Search searchForClass={`search__btn search__btn__${searchFor}`} handleSearch={handleSearch} handleChange={handleChange}/>
+                <Search searchForClass={`search__btn search__btn__${searchFor}`} handleSearch={handleSearch} handleChange={handleChange} page={nextPage}/>
                 <div  className="sorting">
                 <span className="main__head__tv sorting__head">Sort by</span>
                 <Options sortRating={sortRating} sortDate={sortDate} sortAlphabetically={sortAlphabetically}/>
                 </div>
                 
                 <Cards cardList={cardList} sub={searchFor}/>
+                {cardList.length>0 &&                
+                 <div className="main__body__getMore" style={searchFor==="movie" ? {backgroundColor : "#00b8a9"}:{backgroundColor:"#ea5455"}} onClick={()=>{
+                     console.log(nextPage)
+                     window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'smooth'
+                     })
+                     handleSearch(nextPage);
+                 }}>
+                    <span>Get Next Page</span>
+                </div>
+                }
+
             </div>
             </div>
             </Route>

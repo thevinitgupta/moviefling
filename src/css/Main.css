@@ -86,6 +86,19 @@
     background-color: #fff;
     color: #ea5455;
 }
+.main__body__getMore {
+    width: 40%;
+    margin: 10px auto 25px auto;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: #fff;
+    padding: 5px;
+    font-weight: 600;
+}
+.main__body__getMore:hover{
+    cursor: pointer;
+}
 @media screen and (max-width: 950px) {
     .main{
         width: 100vw;
@@ -93,5 +106,18 @@
     }
     .main__body {
         width: 95%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main__body__getMore {
+        width: 70%;
+        margin: 7px auto 10px auto;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 10px;
+        color: #fff;
+        padding: 5px;
+        font-weight: 600;
     }
 }
