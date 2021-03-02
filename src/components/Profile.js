@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import "./Profile.css"
+import "../css/Profile.css"
 
 function Profile({profileDetails,type}) {
   const [displayDetails,setDisplayDetails] = useState(false);

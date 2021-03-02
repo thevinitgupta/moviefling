@@ -1,5 +1,5 @@
 import React from 'react';
-import "./RatingBar.css"
+import "../css/RatingBar.css"
 
 function RatingBar({voteAverage}) {
 

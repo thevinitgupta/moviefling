@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Watch.css";
+import "../css/Watch.css";
 import Provider from './Provider';
 
 function Watch({id,type}) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from './Profile';
-import "./Profiles.css";
+import "../css/Profiles.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

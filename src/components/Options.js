@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Options.css"
+import "../css/Options.css"
 
 function Options({sortRating,sortDate,sortAlphabetically}) {
     return (

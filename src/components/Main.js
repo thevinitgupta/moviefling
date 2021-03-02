@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Route, Switch } from 'react-router-dom';
 import Cards from './Cards';
 import Detail from './Detail';
-import "./Main.css";
+import "../css/Main.css";
 import Options from './Options';
 import Search from './Search';
 import Sort from "./Sort";
@@ -87,11 +87,11 @@ function Main() {
             <Route exact path="/">
             <div className="main">
             <div className="main__head">
-                <div className="main__head__movie active" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,5))}}>Movies</div>
-                <div className="main__head__tv" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,2))}}>Shows</div>
+                <div className="main__head__movie active" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,5)); setSearchFor("movie")}}>Movies</div>
+                <div className="main__head__tv" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,2)); setSearchFor("tv")}}>Shows</div>
             </div>
             <div className="main__body">
-                <Search searchFor={searchFor} handleSearch={handleSearch} handleChange={handleChange}/>
+                <Search searchForClass={`search__btn search__btn__${searchFor}`} handleSearch={handleSearch} handleChange={handleChange}/>
                 <div  className="sorting">
                 <span className="main__head__tv sorting__head">Sort by</span>
                 <Options sortRating={sortRating} sortDate={sortDate} sortAlphabetically={sortAlphabetically}/>

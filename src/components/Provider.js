@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Provider.css";
+import "../css/Provider.css";
 
 function Provider({providers}) {
     return (
