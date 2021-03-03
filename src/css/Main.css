@@ -75,11 +75,15 @@
 }
 .sorting {
     display: flex;
-    width: 95%;
-    justify-content: flex-start;
+    width: 70%;
+    height: 10vh;
+    margin: 5px auto;
+    justify-content: center;
 }
 .sorting__head {
+    flex: 0.2;
     font-weight: 600;
+    text-align: center;
 }
 .sorting__head:hover {
     cursor: auto;
@@ -119,5 +123,16 @@
         color: #fff;
         padding: 5px;
         font-weight: 600;
+    }
+}
+@media screen and (max-width: 450px) {
+    .sorting {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 340px) {
+    .sorting {
+        width: 90%;
+        font-size: 14px;
     }
 }

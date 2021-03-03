@@ -69,7 +69,23 @@ function Main() {
             return;
         }
     }
-
+    function sortResults(option,order){
+        if(cardList){
+            if(option==="rating"){
+                order? sortRating(order) : sortRating("i");
+            }
+            else if(option==="date"){
+                order? sortDate(order) : sortDate("i");
+            }
+            else if(option==="alphabet"){
+                order? sortAlphabetically(order) : sortAlphabetically("i");
+            }
+        }
+        else {
+            return;
+        }
+        
+    }
     function sortRating(order){
        setCardList(Sort.mergeSort(cardList,"vote_average",order));
     }
@@ -97,10 +113,13 @@ function Main() {
             </div>
             <div className="main__body">
                 <Search searchForClass={`search__btn search__btn__${searchFor}`} handleSearch={handleSearch} handleChange={handleChange} page={nextPage}/>
-                <div  className="sorting">
-                <span className="main__head__tv sorting__head">Sort by</span>
-                <Options sortRating={sortRating} sortDate={sortDate} sortAlphabetically={sortAlphabetically}/>
-                </div>
+
+                {cardList.length>0 &&                 
+                    <div  className="sorting">
+                    <div className="main__head__tv sorting__head"><p>Sort by</p></div>
+                    <Options sortResults={sortResults} keyword={searchFor}/>
+                    </div>
+                }
                 
                 <Cards cardList={cardList} sub={searchFor}/>
                 {cardList.length>0 &&                

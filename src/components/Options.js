@@ -1,24 +1,35 @@
 import React from 'react';
 import "../css/Options.css"
 
-function Options({sortRating,sortDate,sortAlphabetically}) {
+function Options({sortResults,keyword}) {
+    let optionColor = {
+        color : "#00b8a9"
+    }
+    if(keyword==="tv"){
+        optionColor.color = "#ea5455";
+    }
     return (
         <div className="options">
-            <div className="options__sort__rating">
-                <span className="options__head">Rating</span><br/>
-                <button id="ratingSortIncreasing" className="sort__btn sort__btn__inc" onClick={()=>{sortRating("i")}}>&#8593;</button> 
-                <button id="ratingSortDecreasing" className="sort__btn sort__btn__dec" onClick={()=>{sortRating("d")}}>&#8595;</button> 
-            </div>
-            <div className="options__sort__year">
-            <span className="options__head">Year</span><br/>
-                <button id="yearSortIncreasing" className="sort__btn sort__btn__inc" onClick={()=>{sortDate("i")}}>&#8593;</button>
-                <button id="yearSortDecreasing" className="sort__btn sort__btn__dec" onClick={()=>{sortDate("d")}}>&#8595;</button>
-            </div>
-            <div className="options__sort__alphabetically">
-            <span className="options__head">Alphabeticaly</span><br/>
-                <button id="alphabetSortIncreasing" className="sort__btn sort__btn__inc" onClick={()=>{sortAlphabetically("i")}}>&#8593;</button>
-                <button id="alphabetSortDecreasing" className="sort__btn sort__btn__dec" onClick={()=>{sortAlphabetically("d")}}>&#8595;</button>
-            </div>
+        <select onChange={(e)=>{
+            if(e.target.value==="none") return null;
+             let [option,order] = e.target.value.split(",");
+             sortResults(option,order)
+             }} className="options__select" style={optionColor}>
+        <option value="none">None</option>
+        <option id="ratingSortIncreasing" className="sort__btn sort__btn__inc" value={["rating","i"]}>Rating Increasing 
+        </option>
+        <option id="ratingSortDecreasing" className="sort__btn sort__btn__dec" value={["rating","d"]}>Rating Decreasing 
+        </option>
+        <option id="yearSortIncreasing" className="sort__btn sort__btn__inc" value={["date","i"]}>Year Increasing
+        </option>
+        <option id="yearSortDecreasing" className="sort__btn sort__btn__dec" value={["date","d"]}>Year Decreasing
+        </option>
+        <option id="alphabetSortIncreasing" className="sort__btn sort__btn__inc" value={["alphabet","i"]}>Alphabetically Increasing
+        </option>
+        <option id="alphabetSortDecreasing" className="sort__btn sort__btn__dec" value={["alphabet","d"]}>Alphabetically Decreasing
+        </option>
+        </select>
+           
         </div>
     )
 }
