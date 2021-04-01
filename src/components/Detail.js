@@ -11,7 +11,6 @@ function Detail({match}) {
         fetchDetails().catch(error=> {
             console.log("Error:",error);
         });
-        console.log(match)
     },[])
     const {id,type} = match.params;
    

@@ -37,7 +37,6 @@ function Main() {
         if(searchKeyword){
             const finalSearchKeyword = searchKeyword.split(/[ -,]/).join("+");
             fetch(`https://api.themoviedb.org/3/search/${searchFor}?api_key=${apiKey}&language=en-US&query=${finalSearchKeyword}&page=${page}&include_adult=false`).then(res => res.json()).then(resp=>{
-                console.log(resp)
                 setCardList(resp.results);
                 if(page>=resp.total_pages) page=0;
                 setNextPage(page+1)
