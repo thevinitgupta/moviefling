@@ -51,15 +51,21 @@
     overflow-x: visible;
 }
 .watch__error {
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     color: #fff;
     background-color: #f4452eb2;
     height: 45px;
-    text-align: center;
+    
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    /* align-content: center; */
 }
-
+.watch__error>h3 {
+    width: fit-content;
+    margin: 0 auto;
+}
 @media screen and (max-width: 700px) {
     .watch__search {
         width: 85%;
@@ -68,7 +74,18 @@
     .watch__country>#dropdown {
         font-size: 18px;
     }
+    .watch__error{
+        width: 70%;
+    }
     .searchWatchWhere {
         font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .watch__error{
+        width: 90%;
+        padding: 5px;
+        font-size: 12px;
     }
 }

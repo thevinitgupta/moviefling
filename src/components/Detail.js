@@ -8,7 +8,6 @@ import Watch from './Watch';
 function Detail({match}) {
     
     useEffect(()=>{
-        
         fetchDetails().catch(error=> {
             console.log("Error:",error);
         });
@@ -21,8 +20,6 @@ function Detail({match}) {
     const fetchDetails = async ()=>{
         const data = await fetch(`http://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}&language=en-US&append_to_response=credits,similar`);
         const jsonData = await data.json();
-       
-        console.log(jsonData)
         setDetails(jsonData)
     };
     const backgroundUrl = details?.backdrop_path || details?.poster_path;
