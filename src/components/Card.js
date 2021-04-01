@@ -4,6 +4,8 @@ import "../css/Card.css";
 import RatingBar from './RatingBar';
 
 function Card({value,sub}) {
+
+    //card object to hold all details of the current card
     const card = {
         title : value.title? value.title : value.name,
         poster : value.poster_path?`https://image.tmdb.org/t/p/original/${value.poster_path}`: "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg",
