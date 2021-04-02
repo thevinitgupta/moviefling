@@ -39,6 +39,8 @@ function Main() {
     function handleSearchValue(event){
         setSearchKeyword(event.target.value)
     }
+
+    //handle search and request for data from API
     function handleSearch(page){
         if(searchKeyword){
             const finalSearchKeyword = searchKeyword.split(/[ -,]/).join("+");
@@ -52,7 +54,7 @@ function Main() {
             })
         }
        else {
-           alert("Please retry!")
+           alert("Please retry with new text!")
        }
                 
     }
@@ -74,16 +76,16 @@ function Main() {
             return;
         }
     }
-    function sortResults(option,order){
+    function sortResults(option,order="i"){
         if(cardList){
             if(option==="rating"){
-                order? sortRating(order) : sortRating("i");
+               sortRating(order);
             }
             else if(option==="date"){
-                order? sortDate(order) : sortDate("i");
+               sortDate(order);
             }
             else if(option==="alphabet"){
-                order? sortAlphabetically(order) : sortAlphabetically("i");
+                sortAlphabetically(order);
             }
         }
         else {
