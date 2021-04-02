@@ -143,7 +143,7 @@ function Main() {
                         })
                         handleSearch(nextPage);
                     }}>
-                        <span>Get Next Page</span>
+                    <span>Get Next Page</span>
                     </div>
                 }
 
