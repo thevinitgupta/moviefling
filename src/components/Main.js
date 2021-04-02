@@ -11,28 +11,34 @@ function Main() {
     const [searchFor,setSearchFor] = useState("movie");
     const [searchKeyword,setSearchKeyword] = useState("")
     const [cardList,setCardList] = useState([]);
-    //const [currentPage,setCurrentPage] = useState(0);
     const [nextPage,setNextPage] = useState(1)
     const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
     
     function handleSearchKeyword(element,keyword){
         if(keyword){
+
+            //highlighting the active tab
             element.target.parentNode.childNodes.forEach(entry => {
                 if(entry===element.target) {
                     element.target.classList.add("active")
                 }
+                //removing the active class from the other tab
                 else {
                     entry.classList.remove("active")
                 }
-            })
+            });
+
+            //setting the keyword for search -> movie or tv
             setSearchFor(keyword);
             
         }
     }
-    function handleChange(event){
+
+    //handle the search value ie the movie or tv show name
+    function handleSearchValue(event){
         setSearchKeyword(event.target.value)
-}
+    }
     function handleSearch(page){
         if(searchKeyword){
             const finalSearchKeyword = searchKeyword.split(/[ -,]/).join("+");
@@ -107,11 +113,11 @@ function Main() {
             <Route exact path="/">
             <div className="main">
             <div className="main__head">
-                <div className="main__head__movie active" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,5)); setSearchFor("movie")}}>Movies</div>
-                <div className="main__head__tv" onClick={(e)=>{handleSearchKeyword(e,e.target.classList["0"].substr(12,2)); setSearchFor("tv")}}>Shows</div>
+                <div className="main__head__movie active" onClick={(e)=>{handleSearchKeyword(e,"movie");}}>Movies</div>
+                <div className="main__head__tv" onClick={(e)=>{handleSearchKeyword(e,"tv");}}>Shows</div>
             </div>
             <div className="main__body">
-                <Search searchForClass={`search__btn search__btn__${searchFor}`} handleSearch={handleSearch} handleChange={handleChange} page={nextPage}/>
+                <Search searchForClass={`search__btn search__btn__${searchFor}`} handleSearch={handleSearch} handleSearchValue={handleSearchValue} page={nextPage}/>
 
                 {cardList.length>0 &&                 
                     <div  className="sorting">
