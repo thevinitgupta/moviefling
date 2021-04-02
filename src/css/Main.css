@@ -81,6 +81,7 @@
     justify-content: center;
 }
 .sorting__head {
+    color : #ea5455;
     flex: 0.2;
     font-weight: 600;
     text-align: center;

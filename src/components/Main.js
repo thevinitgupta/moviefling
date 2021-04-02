@@ -114,33 +114,37 @@ function Main() {
             
             <Route exact path="/">
             <div className="main">
+
+
             <div className="main__head">
                 <div className="main__head__movie active" onClick={(e)=>{handleSearchKeyword(e,"movie");}}>Movies</div>
                 <div className="main__head__tv" onClick={(e)=>{handleSearchKeyword(e,"tv");}}>Shows</div>
             </div>
+
+
             <div className="main__body">
                 <Search searchForClass={`search__btn search__btn__${searchFor}`} handleSearch={handleSearch} handleSearchValue={handleSearchValue} page={nextPage}/>
 
                 {cardList.length>0 &&                 
                     <div  className="sorting">
-                    <div className="main__head__tv sorting__head"><p>Sort by</p></div>
+                    <div className="sorting__head"><p>Sort by</p></div>
                     <Options sortResults={sortResults} keyword={searchFor}/>
                     </div>
                 }
                 
+                
                 <Cards cardList={cardList} sub={searchFor}/>
                 {cardList.length>0 &&                
-                 <div className="main__body__getMore" style={searchFor==="movie" ? {backgroundColor : "#00b8a9"}:{backgroundColor:"#ea5455"}} onClick={()=>{
-                     console.log(nextPage)
-                     window.scrollTo({
-                        top: 0,
-                        left: 0,
-                        behavior: 'smooth'
-                     })
-                     handleSearch(nextPage);
-                 }}>
-                    <span>Get Next Page</span>
-                </div>
+                    <div className="main__body__getMore" style={searchFor==="movie" ?{backgroundColor : "#00b8a9"}:{backgroundColor:"#ea5455"}} onClick={()=>{
+                        window.scrollTo({
+                           top: 0,
+                           left: 0,
+                           behavior: 'smooth'
+                        })
+                        handleSearch(nextPage);
+                    }}>
+                        <span>Get Next Page</span>
+                    </div>
                 }
 
             </div>
